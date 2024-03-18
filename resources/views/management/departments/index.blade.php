@@ -1,7 +1,8 @@
 @extends('layouts.master' )
 
 @section('content')
- 
+  <Departments />
+{{--  
   <div class="row">
     <div class="col-md-6">
       <h1>Departments</h1>
@@ -55,7 +56,7 @@
       </div>
     </div>
 
-  </div>
+  </div> --}}
 
 @endsection
 
