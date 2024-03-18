@@ -28,7 +28,11 @@
                 <td>{{ $loop->index + 1 }}</td>
                 <td>{{ $department->name }}</td>
                 <td>{{ $department->director_id }}</td>
-                <td></td>
+                <td>
+                  <a href="{{ route('departmentsEdit', $department->id) }}" class="btn btn-success"> 
+                    <i class="fa fa-edit"></i>
+                    Edit</a>
+                </td>
               </tr>
             @endforeach
           </tbody>
