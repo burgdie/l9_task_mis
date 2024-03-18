@@ -16,7 +16,7 @@
         <div class="form-group">
           <label for="name">Director</label>
           <select name="director_id" class="form-control">
-            <option value="">Select a person</option>
+            <option value="" selected>Select a person</option>
             <option value="1">IT Director</option>
             <option value="2">HR Director</option>
           </select>
