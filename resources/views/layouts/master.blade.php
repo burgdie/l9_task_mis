@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Sidebar 01</title>
+  	<title>Task Tracking MIS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -9,17 +9,24 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 		<link rel="stylesheet" href="{{ asset('sidebar/css/style.css') }}">
   </head>
   <body>
 		
-		<div class="wrapper d-flex align-items-stretch">
+		<div class="wrapper d-flex align-items-stretch" id="app">
 			<nav id="sidebar">
 				<div class="p-4 pt-5">
-		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(asset('sidebar/images/logo.jpg'));"></a>
+          <a href="#">
+            <img class="img logo mb-5" src="{{ asset('images/task_logo.png') }}" alt="logo">
+          </a>
+         
 	        <ul class="list-unstyled components mb-5">
 	          <li class="active">
-	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Management</a>
+	            <a href="#homeSubmenu" data-bs-toggle="collapse" role="button"
+               aria-expanded="false" aria-controls="homeSubMenu">
+               Management <i class="fa fa-angle-down float-end mt-2"></i>
+              </a>
 	            <ul class="collapse list-unstyled" id="homeSubmenu">
                 <li>
                     <a href="{{ route('departmentsIndex') }}">Departments</a>
@@ -41,9 +48,14 @@
 	         
 	        </ul>
 
-	        <div class="footer">
+	        <div class="footer text-center">
 	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+						  Copyright &copy;
+               2024 All rights reserved  <i class="icon-heart" aria-hidden="true"></i>
+               <span class="mx-auto">
+                  by <a href="#" class="">Task Tracking MIS</a>
+                </span> 
+              
 						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 	        </div>
 
@@ -67,17 +79,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#">Settings</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#">Logout</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Portfolio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
+              
               </ul>
             </div>
           </div>
@@ -98,10 +105,7 @@
         
       </div>
 		</div>
-
-    <script src="{{ asset('sidebar/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('sidebar/js/popper.js') }}"></script>
-    <script src="{{ asset('sidebar/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('sidebar/js/main.js') }}"></script>
   </body>
 </html>
