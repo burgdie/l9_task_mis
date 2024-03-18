@@ -90,7 +90,9 @@
 
           @endif
 
-
+        @if(Session::has('success-message'))
+          <p class="text-success"> {{ Session::get('success-message') }} </p>
+        @endif
 
           @yield('content')
         

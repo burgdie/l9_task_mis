@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Department;
 use Illuminate\Http\Request;
 
+use Session;
+
 class DepartmentController extends Controller
 {
     public function index() {
@@ -36,7 +38,7 @@ class DepartmentController extends Controller
             'name'          =>  $request->name,
            
         ]);
-
+        Session::flash('success-message', 'Department created successfully' );
         return redirect()->route('departmentsIndex');
     }
 
@@ -60,13 +62,14 @@ class DepartmentController extends Controller
             'name'          =>['required'],
             'director_id'   =>['required'],
         ]);
-        
+
         Department::where('id', $id)->update([
             'director_id'   =>  $request->director_id,
             'name'          =>  $request->name,
            
         ]);
 
+        Session::flash('success-message', 'Department updated successfully' );
         return redirect()->route('departmentsIndex');
     }
 
@@ -76,6 +79,7 @@ class DepartmentController extends Controller
     public function delete($id) {
         Department::where('id', $id)->delete();
        
+        Session::flash('success-message', 'Department deleted successfully' );
         return redirect()->route('departmentsIndex');
 
     }
