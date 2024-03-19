@@ -2,13 +2,16 @@
     <h1>Departments List</h1>
 
     <!-- Button trigger modal -->
-    <button
+    <!-- <button
         type="button"
         class="btn btn-success"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
     >
         Create New Department
+    </button> -->
+    <button class="btn btn-success" @click="createDepartment">
+        New Department
     </button>
 
     <!-- Modal -->
@@ -85,6 +88,11 @@ export default {
             name: "",
             director_id: "",
         };
+    },
+    methods: {
+        createDepartment() {
+            $("#exampleModal").modal("show");
+        },
     },
 };
 </script>
