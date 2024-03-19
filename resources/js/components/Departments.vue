@@ -94,5 +94,10 @@ export default {
             $("#exampleModal").modal("show");
         },
     },
+    mounted() {
+        for (let i = 0; i < 10; i++) {
+            console.log(`The count is ${i}`);
+        }
+    },
 };
 </script>
